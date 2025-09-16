@@ -1,0 +1,8 @@
+<!-- App Layout with Left Menu -->
+<div class="app-container">
+  <app-left-menu></app-left-menu>
+  
+  <main class="main-content" [class.collapsed]="isMenuCollapsed">
+    <router-outlet></router-outlet>
+  </main>
+  </div>

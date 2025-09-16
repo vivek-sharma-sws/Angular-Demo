@@ -1,0 +1,17 @@
+/* Card styling - matches original home screen design exactly */
+.group {
+  /* No additional styling needed - inherits from parent grid */
+}
+
+/* Hover effects */
+.group:hover .bg-gray-100 {
+  background-color: #f3f4f6;
+}
+
+.group:hover svg g {
+  transform: scale(1.1);
+}
+
+.group:hover svg g:last-child {
+  transform: scale(1.25) rotate(-12deg);
+}

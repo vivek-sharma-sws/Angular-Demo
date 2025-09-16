@@ -1,0 +1,471 @@
+<div [attr.aria-expanded]="!isMenuCollapsed"
+class="hidden lg:block fixed h-full left-0 z-[41] cursor-e-resize aria-expanded:cursor-default bg-background/90 transition-[width] duration-150 backdrop-blur-md border-r group/sidebar"
+[ngClass]="{'aria-expanded': !isMenuCollapsed}"
+[style.width]="isMenuCollapsed ? '4rem' : '16rem'">
+<div class="relative stack w-full h-full pb-3 overflow-hidden scroll-smooth max-h-screen">
+    <div class="flex justify-between items-center px-3 w-full relative z-20 h-10">
+        <div class="flex justify-between my-3 relative group/header-logo items-center w-full"
+            style="height: var(--eleven-header-height);">
+            <h2 class="font-semibold text-black text-xl" [class.hidden]="isMenuCollapsed">Angular</h2>
+            <div
+                class="transition-all absolute right-0.5 duration-100  group-aria-expanded/sidebar:opacity-100 ">
+                <button data-state="closed" (click)="toggleMenu()"
+                    class="relative inline-flex items-center justify-center whitespace-nowrap text-sm font-medium focus-ring disabled:pointer-events-auto data-[loading='true']:!text-transparent bg-transparent hover:bg-gray-alpha-100 radix-state-open:text-foreground radix-state-open:bg-gray-alpha-200 active:bg-gray-alpha-200 disabled:bg-transparent disabled:text-gray-400 rounded-[10px] pointer-events-auto cursor-e-resize group-aria-expanded/sidebar:cursor-w-resize p-0 h-8 w-8 text-gray-500 hover:text-gray-alpha-950 duration-100 transition-colors"><svg
+                        width="20px" height="20px" viewBox="0 0 20 20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" color="currentColor" class="w-5 h-5">
+                        <rect x="7" y="6.5" width="7" height="1.5" rx="0.75" transform="rotate(90 7 6.5)"
+                            fill="currentColor"></rect>
+                        <rect x="3" y="4" width="14" height="12" rx="2.8" stroke="currentColor"
+                            stroke-width="1.5"></rect>
+                    </svg></button>
+            </div>
+        </div>
+    </div>
+    <nav class="flex h-full flex-1 flex-col grow min-h-0" id="main-nav">
+        <div class="px-3.5 w-full flex flex-col relative z-20 mt-2">
+            <div class="flex items-center relative w-full"><span data-state="closed"
+                    class="flex h-8  pointer-events-none absolute inset-0" role="tooltip"></span><button
+                    class="group/main-nav-item rounded-lg w-full outline-foreground"
+                    aria-label="Platform switcher. Click to switch platforms." type="button" id="radix-:r66:"
+                    aria-haspopup="menu" aria-expanded="false" data-state="closed">
+                    <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] text-gray-alpha-950 ring-1 ring-inset ring-gray-alpha-200 hover:ring-gray-alpha-300 group-aria-expanded/main-nav-item:ring-gray-alpha-300"
+                        data-state="closed">
+                        <div class="flex items-center gap-2 px-1.5 min-w-36">
+                            <div class="center h-8">
+                                <div
+                                    class="w-5 h-5 flex items-center justify-center rounded-md relative text-white bg-black">
+                                    <div
+                                        class="flex absolute inset-0 w-full h-full rounded-[inherit] overflow-hidden">
+                                        <img src="assets/images/png/audioplatform.png" alt="Creative Platform"
+                                            class="w-full h-full object-cover" role="presentation">
+                                    </div>
+                                    <div class="relative z-20">
+                                        <svg width="20px" height="20px" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" color="currentColor">
+                                            <path d="M8.31982 5.1875V14.8125" stroke="currentColor"
+                                                stroke-width="1.5" stroke-linecap="round"></path>
+                                            <path d="M5.1875 8.6875V11.3125" stroke="currentColor"
+                                                stroke-width="1.5" stroke-linecap="round"></path>
+                                            <path d="M11.6802 6.35416V13.6458" stroke="currentColor"
+                                                stroke-width="1.5" stroke-linecap="round"></path>
+                                            <path d="M14.8125 8.6875V11.3125" stroke="currentColor"
+                                                stroke-width="1.5" stroke-linecap="round"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                                <div
+                                    class="flex items-center justify-between flex-1 h-8 transition-all duration-150"
+                                    [class.opacity-0]="isMenuCollapsed"
+                                    [class.opacity-100]="!isMenuCollapsed"
+                                    [class.translate-x-1]="isMenuCollapsed"
+                                    [class.translate-x-0]="!isMenuCollapsed">
+                                    <p class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">Creative
+                                        Platform</p>
+                                <div class="flex items-center ml-auto mr-0.5 justify-center w-4 h-4"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-chevrons-up-down w-4 h-4 opacity-50">
+                                        <path d="m7 15 5 5 5-5"></path>
+                                        <path d="m7 9 5-5 5 5"></path>
+                                    </svg></div>
+                            </div>
+                        </div>
+                    </div>
+                </button></div>
+        </div>
+        <div class="relative flex flex-col grow fade-top-3 fade-bottom-3 w-full">
+            <div class="relative stack overflow-y-auto no-scrollbar overflow-x-hidden grow w-full">
+                <ul class="w-full stack gap-4 lg:gap-5 shrink-0 p-3.5 pb-2 absolute top-0 left-0 right-0"
+                    aria-label="Main navigation" style="opacity: 1; transform: none;">
+                    <li>
+                        <ul class="stack gap-1">
+                            <li class="group w-full">
+                                <div class="relative w-full "><a class="block  rounded-lg outline-foreground"
+                                        href="#">
+                                        <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 !bg-gray-alpha-100 !text-gray-alpha-950 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] hover:text-gray-alpha-950 hover:bg-gray-alpha-100 group-aria-expanded/main-nav-item:bg-gray-alpha-100 group-aria-expanded/main-nav-item:text-gray-alpha-950 text-gray-600"
+                                            data-state="closed">
+                                            <div class="flex items-center gap-2 px-1.5 min-w-36">
+                                                <div class="center h-8">
+                                                    <img src="assets/images/svg/home-icon.svg" alt="home-icon">
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between flex-1 h-8 transition-all duration-150"
+                                                    [class.opacity-0]="isMenuCollapsed"
+                                                    [class.opacity-100]="!isMenuCollapsed"
+                                                    [class.translate-x-1]="isMenuCollapsed"
+                                                    [class.translate-x-0]="!isMenuCollapsed">
+                                                    <p
+                                                        class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">
+                                                        Home</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            </li>
+                            <li class="group w-full">
+                                <div class="relative"><a class="block  rounded-lg outline-foreground" href="#">
+                                        <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] hover:text-gray-alpha-950 hover:bg-gray-alpha-100 group-aria-expanded/main-nav-item:bg-gray-alpha-100 group-aria-expanded/main-nav-item:text-gray-alpha-950 text-gray-600"
+                                            data-state="closed">
+                                            <div class="flex items-center gap-2 px-1.5 min-w-36">
+                                                <div class="center h-8">
+                                                    <img src="assets/images/svg/voice-icon.svg" alt="voice">
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between flex-1 h-8 transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0">
+                                                    <p
+                                                        class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">
+                                                        Voices</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div
+                                        class="absolute right-[0.125rem] top-[0.325rem] z-10 min-w-5 flex items-center justify-center lg:opacity-0 group-aria-expanded/sidebar:group-hover/sidebar:opacity-100 pointer-events-none group-aria-expanded/sidebar:pointer-events-auto transition-all duration-150">
+                                        <button aria-label="Create a voice"
+                                            class="inline-flex items-center justify-center whitespace-nowrap font-medium focus-ring disabled:pointer-events-auto data-[loading='true']:!text-transparent bg-background hover:bg-gray-alpha-50 active:bg-gray-alpha-100 radix-state-open:bg-gray-alpha-50 text-foreground shadow-none active:border-gray-alpha-300 disabled:bg-background disabled:text-gray-300 radix-state-open:border-gray-alpha-300 text-xm relative px-0.5 py-0.5 h-[1.375rem] w-[1.375rem] min-w-0 border border-gray-alpha-200 hover:border-gray-alpha-300 overflow-hidden rounded-[6px] right-1 hover:text-gray-950 group/trigger transition-colors duration-150">
+                                            <div
+                                                class="absolute top-0 right-0 bottom-0 left-0 bg-background hover:bg-background">
+                                            </div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="lucide lucide-plus relative w-3 h-3 opacity-50 group-hover/trigger:opacity-70 transition-opacity duration-150">
+                                                <path d="M5 12h14"></path>
+                                                <path d="M12 5v14"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li aria-label="Playground">
+                        <h2
+                            class="text-sm font-medium text-gray-alpha-500 ml-1.5 mb-1.5 whitespace-nowrap group-aria-expanded/sidebar:opacity-100 opacity-0 transition-opacity duration-150">
+                            Playground</h2>
+                        <ul class="stack gap-1">
+                            <li class="group w-full">
+                                <div class="relative"><a class="block  rounded-lg outline-foreground" href="#">
+                                        <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] hover:text-gray-alpha-950 hover:bg-gray-alpha-100 group-aria-expanded/main-nav-item:bg-gray-alpha-100 group-aria-expanded/main-nav-item:text-gray-alpha-950 text-gray-600"
+                                            data-state="closed">
+                                            <div class="flex items-center gap-2 px-1.5 min-w-36">
+                                                <div class="center h-8">
+                                                    <img src="assets/images/svg/speech-icon.svg" alt="speech-icon">
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between flex-1 h-8 transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0">
+                                                    <p
+                                                        class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">
+                                                        Text to Speech</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            </li>
+                            <li class="group w-full">
+                                <div class="relative"><a class="block rounded-lg outline-foreground" href="#">
+                                        <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] hover:text-gray-alpha-950 hover:bg-gray-alpha-100 group-aria-expanded/main-nav-item:bg-gray-alpha-100 group-aria-expanded/main-nav-item:text-gray-alpha-950 text-gray-600"
+                                            data-state="closed">
+                                            <div class="flex items-center gap-2 px-1.5 min-w-36">
+                                                <div class="center h-8">
+                                                    <img src="assets/images/svg/voice-changer-icon.svg"
+                                                        alt="voice-changer-icon">
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between flex-1 h-8 transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0">
+                                                    <p
+                                                        class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">
+                                                        Voice Changer</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            </li>
+                            <li class="group w-full">
+                                <div class="relative"><a class="block rounded-lg outline-foreground" href="#">
+                                        <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] hover:text-gray-alpha-950 hover:bg-gray-alpha-100 group-aria-expanded/main-nav-item:bg-gray-alpha-100 group-aria-expanded/main-nav-item:text-gray-alpha-950 text-gray-600"
+                                            data-state="closed">
+                                            <div class="flex items-center gap-2 px-1.5 min-w-36">
+                                                <div class="center h-8">
+                                                    <img src="assets/images/svg/sound-effect-icon.svg" alt="sound-effect-icon">
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between flex-1 h-8 transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0">
+                                                    <p
+                                                        class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">
+                                                        Sound Effects</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            </li>
+                            <li class="group w-full">
+                                <div class="relative"><a class="block rounded-lg outline-foreground" href="#">
+                                        <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] hover:text-gray-alpha-950 hover:bg-gray-alpha-100 group-aria-expanded/main-nav-item:bg-gray-alpha-100 group-aria-expanded/main-nav-item:text-gray-alpha-950 text-gray-600"
+                                            data-state="closed">
+                                            <div class="flex items-center gap-2 px-1.5 min-w-36">
+                                                <div class="center h-8">
+                                                    <img src="assets/images/svg/isolator-icon.svg" alt="isolator-icon">
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between flex-1 h-8 transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0">
+                                                    <p
+                                                        class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">
+                                                        Voice Isolator</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li aria-label="Products">
+                        <h2
+                            class="text-sm font-medium text-gray-alpha-500 ml-1.5 mb-1.5 whitespace-nowrap group-aria-expanded/sidebar:opacity-100 opacity-0 transition-opacity duration-150">
+                            Products</h2>
+                        <ul class="stack gap-1">
+                            <li class="group w-full">
+                                <div class="relative"><a class="block rounded-lg outline-foreground" href="#">
+                                        <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] hover:text-gray-alpha-950 hover:bg-gray-alpha-100 group-aria-expanded/main-nav-item:bg-gray-alpha-100 group-aria-expanded/main-nav-item:text-gray-alpha-950 text-gray-600"
+                                            data-state="closed">
+                                            <div class="flex items-center gap-2 px-1.5 min-w-36">
+                                                <div class="center h-8">
+                                                    <img src="assets/images/svg/studio-icon.svg" alt="studio-icon">
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between flex-1 h-8 transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0">
+                                                    <p
+                                                        class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">
+                                                        Studio</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            </li>
+                            <li class="group w-full">
+                                <div class="relative"><a class="block rounded-lg outline-foreground" href="#">
+                                        <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] hover:text-gray-alpha-950 hover:bg-gray-alpha-100 group-aria-expanded/main-nav-item:bg-gray-alpha-100 group-aria-expanded/main-nav-item:text-gray-alpha-950 text-gray-600"
+                                            data-state="closed">
+                                            <div class="flex items-center gap-2 px-1.5 min-w-36">
+                                                <div class="center h-8">
+                                                    <img src="assets/images/svg/music-icon.svg" alt="music-icon">
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between flex-1 h-8 transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0">
+                                                    <p
+                                                        class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">
+                                                        Music</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            </li>
+                            <li class="group w-full">
+                                <div class="relative"><a class="block rounded-lg outline-foreground" href="#">
+                                        <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] hover:text-gray-alpha-950 hover:bg-gray-alpha-100 group-aria-expanded/main-nav-item:bg-gray-alpha-100 group-aria-expanded/main-nav-item:text-gray-alpha-950 text-gray-600"
+                                            data-state="closed">
+                                            <div class="flex items-center gap-2 px-1.5 min-w-36">
+                                                <div class="center h-8">
+                                                    <img src="assets/images/svg/dubbing-icon.svg" alt="dubbing-icon">
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between flex-1 h-8 transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0">
+                                                    <p
+                                                        class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">
+                                                        Dubbing</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            </li>
+                            <li class="group w-full">
+                                <div class="relative"><a class="block rounded-lg outline-foreground" href="#">
+                                        <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] hover:text-gray-alpha-950 hover:bg-gray-alpha-100 group-aria-expanded/main-nav-item:bg-gray-alpha-100 group-aria-expanded/main-nav-item:text-gray-alpha-950 text-gray-600"
+                                            data-state="closed">
+                                            <div class="flex items-center gap-2 px-1.5 min-w-36">
+                                                <div class="center h-8">
+                                                    <img src="assets/images/svg/speech-text-icon.svg" alt="speech-text-icon">
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between flex-1 h-8 transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0">
+                                                    <p
+                                                        class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">
+                                                        Speech to Text</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            </li>
+                            <li class="group w-full">
+                                <div class="relative "><a class="block  rounded-lg outline-foreground" href="#">
+                                        <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] hover:text-gray-alpha-950 hover:bg-gray-alpha-100 group-aria-expanded/main-nav-item:bg-gray-alpha-100 group-aria-expanded/main-nav-item:text-gray-alpha-950 text-gray-600"
+                                            data-state="closed">
+                                            <div class="flex items-center gap-2 px-1.5 min-w-36">
+                                                <div class="center h-8">
+                                                    <img src="assets/images/svg/audio-native-icon.svg" alt="audio-native-icon">
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between flex-1 h-8 transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0">
+                                                    <p
+                                                        class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">
+                                                        Audio Native</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            </li>
+                            <li class="group w-full">
+                                <div class="relative"><a class="block  rounded-lg outline-foreground" href="#">
+                                        <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] hover:text-gray-alpha-950 hover:bg-gray-alpha-100 group-aria-expanded/main-nav-item:bg-gray-alpha-100 group-aria-expanded/main-nav-item:text-gray-alpha-950 text-gray-600"
+                                            data-state="closed">
+                                            <div class="flex items-center gap-2 px-1.5 min-w-36">
+                                                <div class="center h-8">
+                                                    <img src="assets/images/svg/production-icon.svg" alt="production-icon">
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between flex-1 h-8 transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0">
+                                                    <p
+                                                        class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">
+                                                        Productions</p>
+                                                    <div class="inline-flex items-center text-xs px-2.5 h-6 rounded-full font-medium transition-colors whitespace-nowrap focus-ring border border-transparent bg-gray-alpha-100 text-foreground"
+                                                        color="blue">Beta</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-auto stack">
+            <div class="relative w-48 mb-1"></div>
+            <div class="px-3.5 mb-1">
+                <div class="relative">
+                    <ul class="stack gap-1">
+                        <div><span data-state="closed"
+                                class="flex h-8 w-full pointer-events-none absolute inset-0"
+                                role="tooltip"></span>
+                            <li class="group w-full">
+                                <div class="relative"><a class="block rounded-lg outline-foreground" href="#">
+                                        <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] hover:text-gray-alpha-950 hover:bg-gray-alpha-100 group-aria-expanded/main-nav-item:bg-gray-alpha-100 group-aria-expanded/main-nav-item:text-gray-alpha-950 text-gray-600"
+                                            data-state="closed">
+                                            <div class="flex items-center gap-2 px-1.5 min-w-36">
+                                                <div class="center h-8">
+                                                    <img src="assets/images/svg/developers-icon.svg" alt="developers-icon">
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between flex-1 h-8 transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0">
+                                                    <p
+                                                        class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">
+                                                        Developers</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="relative mb-1 px-3.5 flex"><button class="rounded-lg outline-foreground w-full"
+                    type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r69:"
+                    data-state="closed">
+                    <div class="relative group rounded-lg overflow-hidden bg-transparent transition-all duration-150 w-[calc(var(--eleven-sidebar-width)-1.8125rem)] hover:text-gray-alpha-950 hover:bg-gray-alpha-100 group-aria-expanded/main-nav-item:bg-gray-alpha-100 group-aria-expanded/main-nav-item:text-gray-alpha-950 text-gray-600"
+                        data-state="closed">
+                        <div class="flex items-center gap-2 px-1.5 min-w-36">
+                            <div class="center h-8">
+                                <div class="relative w-5 h-5">
+                                    <img src="assets/images/svg/notification-icon.svg" alt="notification-icon">
+                                    <span
+                                        class="w-2 h-2 absolute -top-0.5 right-px border border-background bg-[#007AFF] rounded-full"></span>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center justify-between flex-1 h-8 transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0">
+                                <p class="text-sm font-medium whitespace-nowrap max-w-[168px] truncate">
+                                    Notifications</p>
+                            </div>
+                        </div>
+                    </div>
+                </button></div>
+            <div class="px-3.5 w-full pb-1 pt-0.5"><a
+                    class="relative w-full overflow-hidden group/upgrade z-1 p-0 isolate rounded-lg text-sm font-medium justify-center flex items-center gap-2 px-1.5 h-8"
+                    aria-label="Upgrade subscription group" data-state="closed" href="#">
+                    <div
+                        class="absolute ring-1 ring-inset group-hover/upgrade:ring-gray-300 ring-gray-200 rounded-lg z-10 inset-0 pointer-events-none">
+                    </div>
+                    <div class="absolute inset-0 z-1"
+                        style="background-image: repeating-linear-gradient(135deg, hsl(var(--background)), hsl(var(--background)) 4px, var(--gray-alpha-100) 4px, var(--gray-alpha-100) 8px);">
+                    </div>
+                    <div class="absolute inset-0 group-hover:!bg-gray-200"
+                        style="background-image: linear-gradient(90deg, hsl(var(--background)), hsl(var(--background) / 0));">
+                    </div>
+                    <div
+                        class="flex items-center gap-2 translate-x-[33px] group-aria-expanded/sidebar:translate-x-0 transition-transform duration-150">
+                        <div class="w-5 h-5 flex items-center justify-center">
+                            <img src="assets/images/svg/upgrade-icon.svg" alt="upgrade-icon">
+                        </div>
+                        <div
+                            class="relative hstack transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0">
+                            Upgrade<div
+                                class="absolute top-0 left-0 h-full w-full text-gray-200 hstack items-center opacity-70 gap-1.5"
+                                style="mask-size: 300% 100%; mask-position: 100% 0px; mask-image: linear-gradient(90deg, transparent 33%, rgb(0, 0, 0), transparent 66%);">
+                                Upgrade</div>
+                        </div>
+                    </div>
+                </a></div>
+            <div class="relative px-3.5 mt-1"><button aria-label="Your profile"
+                    class="group w-full relative group items-center gap-0.5 h-11 shrink-0 justify-between flex rounded-lg text-sm leading-6 font-semibold outline-foreground w-[calc(var(--eleven-sidebar-width)-1.5rem)] transition-all duration-150 group-aria-expanded/sidebar:hover:bg-gray-alpha-100"
+                    type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r2m:"
+                    data-state="closed">
+                    <div
+                        class="shrink-0 relative group-aria-expanded/sidebar:translate-x-1 -translate-x-1 transition-transform duration-150">
+                        <div class="relative">
+                            <div class="flex" style="opacity: 1;">
+                                <div class="opacity-100 transition-opacity duration-300 css-2c8lkk"
+                                    aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" role="progressbar">
+                                    <svg viewBox="0 0 100 100" class="css-bj12qo">
+                                        <circle cx="50" cy="50" r="42" stroke-width="4px"
+                                            class="chakra-progress__track css-131d71n"></circle>
+                                        <circle cx="50" cy="50" r="42" stroke-width="4px"
+                                            class="chakra-progress__indicator css-osbmls" stroke-linecap="round"
+                                            stroke-dashoffset="66" stroke-dasharray="0 264"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="absolute top-0 left-0 h-full w-full rounded-full p-px"
+                                style="transform: scale(0.7); opacity: 1;"><img
+                                    class="rounded-full shrink-0 bg-gray-50 object-cover h-full w-full"
+                                    src="assets/images/png/namelogo.png" alt="Manthan Rawat"></div>
+                        </div>
+                    </div>
+                    <div
+                        class="overflow-hidden flex items-center justify-between flex-1 h-11 transition-all duration-150 group-aria-expanded/sidebar:opacity-100 opacity-0 translate-x-1 group-aria-expanded/sidebar:translate-x-0 rounded-lg pl-2 pr-2">
+                        <div class="text-start overflow-hidden">
+                            <p aria-hidden="true" class="text-sm text-foreground font-medium truncate inter">
+                                Vivek Sharma</p>
+                            <div style="height: auto; opacity: 1;">
+                                <p aria-hidden="true"
+                                    class="text-xs font-normal truncate -mt-0.5 overflow-ellipsis inter text-gray-alpha-500">
+                                    My Workspace</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex h-4 w-4 items-center justify-center opacity-50 rotate-90 transition-transform duration-100 [button[data-state=open]_&amp;]:rotate-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chevron-right h-4 w-4 min-w-fit">
+                                <path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </button></div>
+        </div>
+    </nav>
+</div>
+</div>

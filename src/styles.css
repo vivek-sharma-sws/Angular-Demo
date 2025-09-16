@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Global Utility Classes */
+.overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+}
+
+.bg-foreground {
+    background-color: #0f0f10;
+}
+
+.text-background {
+    color: #fff;
+}
+
+.fill-background {
+    fill: #fff;
+}
+
+.bg-gray-alpha-100 {
+    background-color: #0000170b;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hover\:text-gray-alpha-950:hover {
+    color: #000001e3;
+}
+
+.hover\:bg-gray-alpha-100:hover {
+    background-color: #0000170b;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.no-scrollbar {
+    scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
